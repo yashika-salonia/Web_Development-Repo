@@ -14,4 +14,4 @@ city='jaipur'
 //WE can also define without aasigning it any value
 let school //output will be undefined value
 
-console.table([a,name_1,age,city,school]); //display all defined data types in tabular form
+console.table([a,name_1,age,city,school]); //display everything in console in tabular form
