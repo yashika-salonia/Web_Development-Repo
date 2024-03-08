@@ -1,12 +1,12 @@
 //Dates
-// let mydate=new Date();
-// console.log(typeof mydate); //date is an object
-// console.log(mydate); //2024-03-08T17:29:29.754Z
-// console.log(mydate.toDateString()); //Fri Mar 08 2024
-// console.log(mydate.toString()); //Fri Mar 08 2024 23:00:11 GMT+0530 (India Standard Time)
-// console.log(mydate.toISOString()); //2024-03-08T17:31:56.523Z
-// console.log(mydate.toLocaleString()); // 8/3/2024, 11:01:56 pm
-// console.log(mydate.toLocaleDateString());//8/3/2024
+let mydate=new Date();
+console.log(typeof mydate); //date is an object
+console.log(mydate); //2024-03-08T17:29:29.754Z
+console.log(mydate.toDateString()); //Fri Mar 08 2024
+console.log(mydate.toString()); //Fri Mar 08 2024 23:00:11 GMT+0530 (India Standard Time)
+console.log(mydate.toISOString()); //2024-03-08T17:31:56.523Z
+console.log(mydate.toLocaleString()); // 8/3/2024, 11:01:56 pm
+console.log(mydate.toLocaleDateString());//8/3/2024
 
 let createdDate=new Date(2023,2,6)
 console.log(createdDate.toLocaleString()); // 6/3/2023, 12:00:00 am
