@@ -1,0 +1,54 @@
+//--------DOM manipulation----------
+
+//---Different methods to get elements---
+
+//1. getElementById
+const title_tag=document.getElementById('title') 
+//Now when we enter 'title_tag', output will be => <h1 id="title" class="heading">DOM learning</h1> => selects all the document
+
+document.getElementById('title').id //'title' 
+
+document.getElementById('title').className //'heading' => class=className
+
+document.getElementById('title').getAttribute('id') //'title'
+
+document.getElementById('title').getAttribute('class') //'heading'
+
+//To set the attribute of an element
+document.getElementById('title').setAttribute("class",'test') //Output => undefined => it does not return anything but changes the value in HTML code
+
+//---Different methods to change style of 'title_tag'---
+
+title_tag.style.backgroundColor='pink'; //heading background color is changed to pink
+title_tag.style.padding='15px'; //adds padding of 15px around text in heading
+title_tag.style.borderRadius='25px'; //adds rounded corners with a radius of 25 pixels
+
+//---Different ways to get content inside the tags---
+
+//i. textContent => gets all the HTML within the tag as plain text including hidden text also
+title_tag.textContent
+
+//ii. innerHTML =>  gets all the HTML within the tag, it includes any HTML present within
+title_tag.innerHTML
+
+//iii. innerText => only returns visible part of the html, not any hidden parts
+title_tag.innerText
+
+
+//2. getElementsByClassName
+document.getElementsByClassName('heading') // HTMLCollection [h1#title.heading, title:h1#title.heading]
+
+//3. Query Selector => to select particular element among many similar elements
+document.querySelector('h2') //gives the output of 1st occuring h2 tag
+document.querySelector('#title') //by id
+document.querySelector('.heading') //by class
+document.querySelector('input[type="password"]') //by input type
+document.querySelector('p:first-child') //select first paragraph in the div tag, return null if p is not at 1st position
+let myul=document.querySelector('ul') //return all the elements in ul list
+
+//Query Selector on 'myul'
+let turn_green=myul.querySelector('li') //selects 1st element in the list
+turn_green.style.backgroundColor='Green' //changes background color to green for 1st elemented of list 
+turn_green.style.borderRadius='20px' ; //rounds off the edges of first li by adding border radius of 20px
+turn_green.innerText //'One'
+turn_green.innerText='Five' //changes list 1st element from 'One' to 'Five'
