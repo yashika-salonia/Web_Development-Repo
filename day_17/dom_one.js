@@ -54,3 +54,50 @@ console.log(turn_green.style.backgroundColor='Green') //changes background color
 console.log(turn_green.style.borderRadius='20px') //rounds off the edges of first li by adding border radius of 20px
 console.log(turn_green.innerText) //'One'
 console.log(turn_green.innerText='Five') //changes list 1st element from 'One' to 'Five'
+
+//------Query Selector All------
+
+console.log(document.querySelectorAll('li')); //returns nodeList of all 'li' items
+const temp = document.querySelectorAll('li');
+
+//Nodelist is similar to array but not exact array and nodelist does not allow map function to work on it 
+
+temp[0].style.color='green' //changes 1st list item to green
+
+const myH1=document.querySelectorAll('h1') 
+console.log(myH1) //Nodelist
+//Since nodelist always exist as a list so we need to specify the index no. either in case of single element too.
+
+myH1[0].style.color='green' //accesssing individual element by its index number i.e [0]
+
+//forEach on  Node List
+temp.forEach(function (li) {
+    li.style.backgroundColor='yellow'
+})
+
+// getElementByClassName
+document.getElementsByClassName('list') //gives html collection of list with class= 'list'
+const tempClassList=document.getElementsByClassName('list');
+
+//Applying for Each on Html Collection
+/*
+tempClassList.forEach(function (li) {
+    console.log(li);
+}) //This will not work and give error
+*/
+
+//To solve this we can convert html collection to array to use forEach and map on it
+
+Array.from(tempClassList) //converting into array
+const myConvArr= Array.from(tempClassList);
+
+myConvArr.forEach(function (li) {
+    console.log(li.style.color='blue');
+    console.log(li.innerText='demo');
+    console.log(li.backgroundColor='pink')
+})
+
+let mapArr=myConvArr.map((item)=>{
+    item.textContent;
+})
+console.log(mapArr) 
