@@ -1,0 +1,34 @@
+<!-- To create a div using knowledge of nodelist -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+<script>
+    const div=document.createElement('div')
+    console.log(div);
+    div.className='main'
+    div.id=Math.round(Math.random()*10+1)
+    div.setAttribute('title','generate a title')
+    div.style.backgroundColor='green'
+    div.style.padding='12px'
+    //uptill now the div tag is store in memory and needs to be attched to the document to be shown on the browser
+
+    //---Adding text into the div tag---
+    //two methods to do this is:
+    //1.Using innerText
+    div.innerText='Over write the attribute '
+
+    //2.Using createTextNode and then appending it in the div
+    const addtext=document.createTextNode('Using node')
+    div.appendChild(addtext)
+    
+    //attaching div to the document
+    document.body.appendChild(div)
+</script>
+</html>

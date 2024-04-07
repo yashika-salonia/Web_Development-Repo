@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent.children); //HTMLCollection(4)
+    console.log(parent.children[1]); //second child node of the parent div
+    console.log(parent.children[1].innerHTML); //Tuesday
+    console.log(parent.children.length); //4
+
+    for(let i=0;i<parent.children.length;i++){
+        console.log(parent.children[i].innerHTML) //prints all the name of the days
+    }
+
+    //Performing task on child accessing it from the parent
+    parent.children[1].style.color='orange'
+    console.log(parent.firstElementChild); 
+    console.log(parent.lastElementChild); 
+
+    //Moving from child to parent
+    const dayone=document.querySelector('.day')
+    console.log(dayone); //selects monday
+    console.log(dayone.parentElement); //selects full div 
+    console.log(dayone.nextElementSibling); //selects tuesday
+
+    console.log('Nodes: ', parent.childNodes); //this counts all the nodes including text, comments and elements.
+
+</script>
+</html>
