@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM </title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>    
+    function addlang(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`
+        //attaching it to the list 
+        document.querySelector('.language').appendChild(li);
+    }
+    addlang("python");
+    addlang("typescript"); 
+    /*this method can be called multiple times and will keep adding new languages to the list 
+    1 limitation => this method will always have to traverse the full list either it contains one item or in lakhs of items and this causes optimisation issue sometimes.
+    */
+
+    //To solve this problem => (use createTextNode)
+    function addOptiLang(langName){
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLang('golang');
+
+    //Edit the values
+    //2nd with mojo
+    const secLang=document.querySelector("li:nth-child(2)");
+    // secLang.innerHTML='mojo' //can also write this but this is not optimised
+    const newLi=document.createElement('li')
+    newLi.textContent='mojo';
+    secLang.replaceWith(newLi);
+
+    //1st with typescript
+    const firsLang=document.querySelector("li:nth-child(1)")
+    //firsLang.outerHTML='<li>typescript</li>'
+    const newLi2=document.createElement('li')
+    newLi2.textContent='typescript'
+    firsLang.replaceWith(newLi2)
+
+    //Remove the values
+    //to remove last language
+    let lastLang=document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>
