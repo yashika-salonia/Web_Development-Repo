@@ -26,8 +26,12 @@ let str2 = "World";
 let concat_strings = `${str1}` + " " + `${str2}`;
 console.log(concat_strings); // Hello World
 
+let firstname="Happy"
+let last_name="Singh"
+console.log(`${firstname}`+" "+`${last_name}`); //Happy Singh
+
 //Find the length of string “Javascript”
-let js_length = "Javascript";
+let js_length = " Java script"; //12 with spaces
 console.log(js_length.length); //10
 
 //Extract a string “world” from “hello world”

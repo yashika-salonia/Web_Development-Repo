@@ -6,10 +6,10 @@ console.log(`${greet} ${name}`); //hello world
 //String methods
 let place=new String('India')
 console.log(place[1]); //n is printed
-console.log(place.__proto__); //to print all the object values
+console.log(place.__proto__); //to print all the object values //{}
 console.log(place.length); //5
 console.log(place.toUpperCase()); //INDIA
-console.log(place.charAt(2)); //i is printed as charAt method takes index
+console.log(place.charAt(2)); //d is printed as charAt method takes index
 console.log(place.indexOf('a')); //4
 console.log(place.indexOf('A')); //-1 because A is not present in string  
 

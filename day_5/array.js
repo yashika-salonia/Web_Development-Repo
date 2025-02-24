@@ -28,8 +28,9 @@ console.log(ary1.includes(9)); //false
 //indexOf() returns the position of a value in the array or -1 if not found
 console.log(ary1.indexOf(3)) //3
 console.log(ary1.indexOf(-5)); //-1 => Not found
+
 //To convert array in string
-let newary=ary1.join()
+let newary=ary1.join() //.join() converts array to string
 console.log(ary1) // [ -1, 1, 2, 3 ]
 console.log(newary) // -1,1,2,3
 
@@ -38,10 +39,10 @@ console.log('A ',ary1 ); //A  [ -1, 1, 2, 3 ]
 let ary3=ary1.slice(0,3)
 console.log(ary3) //[ -1, 1, 2 ]
 //Spice => Copy original array but changes made on spliced one will reflect on the original array also
-console.log("B ",ary1 ) //[ -1, 1, 2, 3 ]
+console.log("B ",ary1 ) //B [ -1, 1, 2, 3 ]
 let ary4=ary1.splice(0,3)
 console.log(ary4) //[-1,1,2]
-console.log("C ",ary1) //[3] 
+console.log("C ",ary1) //C [3] 
 
 //Arrays (Part-2)
 let colorName=['red','blue','green']

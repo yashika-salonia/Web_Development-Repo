@@ -18,7 +18,7 @@ console.log(person[sym1]); //value1 => symbols are called in [] braces only
 
 //to modify values
 person.age+=5
-console.log(person.age);
+console.log(person.age); //35
 
 //to freeze values in object
 Object.freeze(person)
@@ -29,7 +29,7 @@ console.log(person.name); //John
 function greeting(person){
     console.log(`Hello user`) //simple function returning 'hello user'
 };
-console.log(greeting(person)) // Hello User
+console.log(greeting(person)) 
 
 function greeting2(person){
     console.log(`Hello user, ${person.name}`)   

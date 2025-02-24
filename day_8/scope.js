@@ -8,6 +8,7 @@ let a=10 //let => block scope
 const b=20 //const => block scope
 var c=30 //var => global scope
 
+
 if(true){
     let a=100
     const b=200

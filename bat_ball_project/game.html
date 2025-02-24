@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+
+        let comChoice=generateRandomChoice();
+        let resultMsg=getResult('Bat',comChoice);
+        showResult('Bat',comChoice,resultMsg);
+
+    ">Bat</button>
+
+    <!-- Ball -->
+    <button onclick="
+    
+        comChoice=generateRandomChoice();
+        resultMsg=getResult('Ball',comChoice);
+        showResult('Ball',comChoice,resultMsg);
+    
+    ">Ball</button>
+
+    <!-- Stump -->
+    <button onclick="
+    
+        comChoice=generateRandomChoice();
+        resultMsg=getResult('Stump',comChoice);
+        showResult('Stump',comChoice,resultMsg);
+        
+    ">Stump</button>
+    
+    <script>
+        let score={
+            win:0,
+            lose:0,
+            draw:0,
+            displayScore: function(){
+                return `Win: ${score.win}, Lose: ${score.lose}, Draw: ${score.draw}`;
+            }
+        };
+
+        function generateRandomChoice(){
+            let randomNo=Math.random()*3;
+            if(randomNo>0 && randomNo<=1){
+                return 'Bat';
+            }
+            else if(randomNo>1 && randomNo<=2){
+                return 'Ball';
+            }
+            else{
+                return 'Stump';
+            }
+        }
+
+        function getResult(userMove, CompMove){
+            if(userMove===CompMove){
+                score.draw++;
+                return 'It\'s a tie';
+            }
+            else if((userMove==='Bat' && CompMove==='Ball') || (userMove==='Ball' && CompMove==='Stump') || (userMove==='Stump' && CompMove==='Bat')){
+                score.win++;
+                return 'You Win';
+            }
+            else{
+                score.lose++;
+                return 'Computer Wins';
+            }
+        }
+
+        function showResult(userMove,CompMove,result){
+            alert(`You choose ${userMove}. Computer Choose ${CompMove}.
+            ${result}
+            ${score.displayScore()}`);
+        }
+    </script>
+</body>
+
+</html>

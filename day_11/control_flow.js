@@ -26,6 +26,9 @@ if(boolean expression) {
 if(true){
     console.log('executed');
 }
+if(!false){
+    console.log('not executed');
+}
 
 let num=4
 if (num>0) {

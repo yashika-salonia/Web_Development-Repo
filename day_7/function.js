@@ -15,7 +15,8 @@ function callname(){
     console.log('K');
     console.log('A');
 }
-console.log(callname());
+// console.log(callname());
+callname()
 
 //This function is used to print name in single line using return
 function myname() {

@@ -25,4 +25,5 @@ one(); //Hello
 //2. Arrow function as Un-named IIFE 
 ( (func) => {
    console.log(`This is arrow function inside ${func}`)
-})('IIFE');
+})
+('IIFE');

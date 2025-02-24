@@ -7,9 +7,9 @@ console.log(balance); //[Number: 100]
 console.log(balance.toString().length); //3
 console.log(balance.toFixed(2)); //100.00
 
-const num=123.89433
+const num=123.49433
 //Rounding off to the nearest no as given in the function 
-console.log(num.toPrecision(3));
+console.log(num.toPrecision(3)); //123
 
 const hundreds=1000000
 // In International number system
