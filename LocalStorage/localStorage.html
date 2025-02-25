@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        let product={
+            name: 'TShirt',
+            price: 789,
+            rating: {
+                stars: 4.5,
+                noOfReviews: 453,
+            },
+        };
+
+        // localStorage.setItem('Name','Ys');
+        // localStorage.setItem('Price','434');
+        console.log(localStorage.getItem('Name'));
+        console.log(localStorage.getItem('Price'));
+
+        //if we save the object without conversion then it will store the wrong value not as expected
+        localStorage.setItem('Product',product);
+        console.log(localStorage.getItem('Product'));
+        
+        //To solve this problem we will convert the object to string using JSON.stringify()
+        localStorage.setItem('Product',JSON.stringify(product));
+        console.log(localStorage.getItem('Product'));
+
+        //converting back to object using parse JSON function
+        let prod2= JSON.parse(localStorage.getItem('Product'));
+        console.log(prod2);
+
+        //how to remove items from local storage
+        localStorage.removeItem('Price')
+
+        //to clean the local storage
+        localStorage.clear();
+    </script>
+</body>
+</html>
