@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+</head>
+<body>
+    <!-- <button class="my-button"></button> -->
+    <div class="my-div">this is a div</div>
+    <script>
+        //dom properties -
+        // 1. location 
+        // 2. title 
+        // 3. href
+        // 4. domain
+        // 5. innerHTML
+        // 6. innerText
+        // 7. classList
+
+        //dom functions
+        let button = document.createElement('Button');
+
+        button.innerText='Click me'
+
+        document.querySelector('.my-div').appendChild(button);
+
+        document.querySelector('.my-div').removeChild(button);
+
+        //to implement replaceChild
+        //step-1 
+        let newDiv=document.createElement('div');
+        newDiv.innerText='hello'
+
+        //step-2
+        let oldDiv=document.querySelector('.my-div')
+
+        //step-3
+        let parDiv=oldDiv.parentNode;
+        parDiv.replaceChild(newDiv,oldDiv);
+        
+    </script>
+</body>
+</html>
