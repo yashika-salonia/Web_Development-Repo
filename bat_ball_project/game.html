@@ -36,9 +36,15 @@
         
     ">Stump</button>
 
+    <!-- Reset button -->
     <button onclick="localStorage.clear();
         resetScore();
     ">Reset</button>
+
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
     
     <script>
         let scorestr=localStorage.getItem('Score');
@@ -67,7 +73,9 @@
             };
             score.displayScore= function(){
                     return `Win: ${score.win}, Lose: ${score.lose}, Draw: ${score.draw}`;
-            }   
+            } 
+            
+            showResult();
         }
 
         function generateRandomChoice(){
@@ -100,9 +108,26 @@
 
         function showResult(userMove,CompMove,result){
             localStorage.setItem('Score',JSON.stringify(score));
-            alert(`You choose ${userMove}. Computer Choose ${CompMove}.
-            ${result}
-            ${score.displayScore()}`);
+
+            //show user move text on page
+            document.querySelector('#user-move').innerText=
+            userMove ? `You choose: ${userMove}`:'';
+
+            //show computer move text on page
+            document.querySelector('#computer-move').innerText=
+            CompMove ? `Computer choose: ${CompMove}` : '';
+
+            //to show the result
+            document.querySelector('#result').innerText=
+            result || '';
+
+            //to show score
+            document.querySelector('#score').innerText=`Score is ${score.displayScore()}`;
+
+
+            // alert(`You choose ${userMove}. Computer Choose ${CompMove}.
+            // ${result}
+            // ${score.displayScore()}`);
         }
     </script>
 </body>
