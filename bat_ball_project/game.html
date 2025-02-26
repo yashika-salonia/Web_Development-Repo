@@ -35,16 +35,40 @@
         showResult('Stump',comChoice,resultMsg);
         
     ">Stump</button>
+
+    <button onclick="localStorage.clear();
+        resetScore();
+    ">Reset</button>
     
     <script>
-        let score={
-            win:0,
-            lose:0,
-            draw:0,
-            displayScore: function(){
-                return `Win: ${score.win}, Lose: ${score.lose}, Draw: ${score.draw}`;
-            }
-        };
+        let scorestr=localStorage.getItem('Score');
+        let score;
+        resetScore(scorestr);
+        //method 1
+        // let score;
+        // if(scorestr!== undefined){
+        //     score=JSON.parse(scorestr);
+        // }
+        // else{
+        //     score={
+        //         win:0,
+        //         lose:0,
+        //         draw:0,
+                
+        //     };
+        // }
+
+        function resetScore(scorestr){
+            //method 2
+            score=scorestr? JSON.parse(scorestr) : {
+                win:0,
+                lose:0,
+                draw:0,
+            };
+            score.displayScore= function(){
+                    return `Win: ${score.win}, Lose: ${score.lose}, Draw: ${score.draw}`;
+            }   
+        }
 
         function generateRandomChoice(){
             let randomNo=Math.random()*3;
@@ -75,6 +99,7 @@
         }
 
         function showResult(userMove,CompMove,result){
+            localStorage.setItem('Score',JSON.stringify(score));
             alert(`You choose ${userMove}. Computer Choose ${CompMove}.
             ${result}
             ${score.displayScore()}`);
