@@ -1,0 +1,39 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#main-heading{
+    text-align: center;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 10px;
+    align-items:center;
+}
+
+#todo-input, #todo-date{
+    font-size: 15px;
+    padding: 10px 5px;
+}
+
+.btn-todo{
+    background-color: green;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    padding: 15px 15px;
+    cursor: pointer;
+}
+
+.dlt-btn{
+    background-color: rgb(156, 9, 9);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 5px;
+    cursor: pointer;
+}
