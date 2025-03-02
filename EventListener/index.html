@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Listeners</title>
+</head>
+<body>
+    <button id="my-button">Click me</button>
+    <script>
+        let button=document.querySelector('#my-button');
+        let workDone=event => console.log('I am clicked');
+        button.addEventListener('click',workDone);
+
+        let printDate= event => console.log(new Date());
+        button.addEventListener('click',printDate);
+
+        //to remove event listener, we will always need a reference that means we have to assign the name to that function
+        button.removeEventListener('click',workDone);
+
+        //for each loop
+        let arr=[1,2,3,4,5,6,7,8];
+        // arr.forEach(function(num){
+        //     console.log(num);
+        // });
+
+        //for single argument function can be modified
+        // arr.forEach((num) => {
+        //     console.log(num);
+        // });
+
+        //to search for an element
+        function search(arr,num){
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]===num){
+                    console.log(`Element found at ${i}`);
+                    return; //to return once the element if found
+                }
+            }
+            console.log('element not found');
+        }
+        // search(arr,2);
+
+        //in this case the forEach loop is not used because the return statement in forEach loop will run as continue
+        arr.forEach(num =>{
+            if(num===5){
+                return;
+            }
+            console.log(`visitd ${num}`)
+        });
+
+    </script>
+</body>
+
+</html>
