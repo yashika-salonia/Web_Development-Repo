@@ -1,13 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
 function App() {
 
-  let foodItems=["Dal", "Roti","Salad","Milk","Ghee"];
-  // let foodItems=[];
+  // let foodItems=["Dal", "Roti","Salad","Milk","Ghee"]; 
+  let foodItems=[];
 
   // conditional rendering
   // Terninary operator 
-  let emptyMessage=foodItems.length === 0 ? <h3>No food items added.</h3>:null;
+  // let emptyMessage=foodItems.length === 0 ? <h3>No food items added.</h3>:null;
 
   return (
     // <div> - to avoid this div
@@ -18,13 +20,13 @@ function App() {
 
       {/* truthy-falsy values - Logical operator */}
       {/* {foodItems.length === 0 && <h3>No food items added.</h3>} */}
+      {/* {emptyMessage} */}
 
-      {emptyMessage}
-      <ul className="list-group">
+      {/* <ul className="list-group">
         {foodItems.map( (item) => (
           <li key={item} className="list-group-item" >{item}</li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Fragments */}
       {/* <ul class="list-group">
@@ -34,6 +36,10 @@ function App() {
         <li class="list-group-item">Roti</li>
         <li class="list-group-item">Salad</li>
       </ul> */}
+
+      {/* props in react - follows parent to child flow of data */}
+      <ErrorMessage items={foodItems}></ErrorMessage>
+      <FoodItems  items={foodItems}></FoodItems>
     </>
     // </div>
   );
