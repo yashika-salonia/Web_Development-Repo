@@ -2,10 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+import "./App.css";
 function App() {
 
-  // let foodItems=["Dal", "Roti","Salad","Milk","Ghee"]; 
-  let foodItems=[];
+  let foodItems=["Dal", "Roti","Salad","Milk","Ghee"]; 
+  // let foodItems=[];
 
   // conditional rendering
   // Terninary operator 
@@ -16,7 +17,7 @@ function App() {
     //1. use React.Fragment -<React.Fragment></React.Fragment>
     //2. <>
     <>
-      <h1>Healthy Food</h1>
+      <h1 className="food-heading">Healthy Food</h1>
 
       {/* truthy-falsy values - Logical operator */}
       {/* {foodItems.length === 0 && <h3>No food items added.</h3>} */}
